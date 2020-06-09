@@ -18,12 +18,13 @@
         arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
 
-        <a-marker preset="hiro">
-            <!-- <a-marker type='barcode' value='0'> -->
+        <!-- <a-marker preset="hiro"> -->
+        <a-marker type='barcode' value='0'>
             <a-box position='0 0.5 0' color="yellow"></a-box>
         </a-marker>
 
-        <a-marker type='barcode' value='1'>
+        <a-marker preset="hiro">
+            <!-- <a-marker type='barcode' value='1'> -->
             <a-entity fbx-model="src: url(models/test/test.fbx);"></a-entity>
         </a-marker>
 
