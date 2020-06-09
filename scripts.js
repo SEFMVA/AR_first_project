@@ -1,1 +1,1 @@
-console.log(AFRAME);
+console.error(AFRAME);
