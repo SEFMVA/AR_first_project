@@ -1,30 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-<!-- https://github.com/AR-js-org/AR.js -->
-<!-- https://ar-js-org.github.io/AR.js-Docs/image-tracking/#create-image-descriptors -->
-<!-- https://github.com/nicolocarpignoli/artoolkit-barcode-markers-collection -->
+<html>
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<!-- we import arjs version without NFT but with marker + location based support -->
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR</title>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-</head>
-
-<body>
-    <a-scene embedded
-        arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
-
-
-        <a-marker type='barcode' value='0'>
-            <a-box position='0 0.5 0' color="yellow"></a-box>
+<body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded arjs>
+        <a-marker preset="hiro">
+            <a-entity position="0 0 0" scale="0.05 0.05 0.05"
+                gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf">
+            </a-entity>
         </a-marker>
-
-        <a-marker type='barcode' value='1'>
-            <a-entity fbx-model="src: url(models/test/test.fbx);"></a-entity>
-        </a-marker>
-
         <a-entity camera></a-entity>
     </a-scene>
 </body>
