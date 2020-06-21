@@ -12,7 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AR</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script> -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <script src="scripts.js"></script>
     <script src="aframe-extras.js"></script>
 </head>
@@ -27,21 +28,27 @@
             <a-box position='0 0.5 0' color="green"></a-box>
         </a-marker>
 
-        <a-marker preset="hiro">
-            <!-- <a-marker type='barcode' value='1'> -->
+        <!-- <a-marker preset="hiro"> -->
+        <!-- <a-marker type='barcode' value='1'> -->
 
-            <a-entity scale="0.1 0.1 0.1" gltf-model="./models/shrek/Shrek.gltf" animation-mixer="clip: Scene">
-            </a-entity>
+        <!-- <a-entity scale="0.1 0.1 0.1" gltf-model="./models/shrek/Shrek.gltf" animation-mixer="clip: Scene">
+            </a-entity> -->
 
-            <!-- <a-entity animation-mixer=""
+        <!-- <a-entity animation-mixer=""
                 gltf-model="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf"
                 scale="2 2 2">
             </a-entity> -->
 
-            <!-- <a-entity animation-mixer="" scale="5 5 5"
+        <!-- <a-entity animation-mixer="" scale="5 5 5"
                 gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf">
             </a-entity> -->
-        </a-marker>
+        <!-- </a-marker> -->
+
+        <a-nft type="nft" url="./markers/images/nft.iset" smooth="true" smoothCount="10" smoothTolerance=".01"
+            smoothThreshold="5">
+            <a-entity scale="0.1 0.1 0.1" gltf-model="./models/shrek/Shrek.gltf" animation-mixer="clip: Scene">
+            </a-entity>
+        </a-nft>
 
         <a-entity camera></a-entity>
     </a-scene>
