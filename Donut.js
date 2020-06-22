@@ -11,7 +11,6 @@ class Donut {
         const modelPath = "./models/donut/Donut.gltf"
         this.view.setAttribute('scale', scale);
         this.view.setAttribute('gltf-model', modelPath)
-        // this.view.setAttribute('visible', false);
         this.view.setAttribute('visible', true);
 
 
