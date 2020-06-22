@@ -3,7 +3,7 @@ document.addEventListener("markerFound", () => {
 
 })
 
-AFRAME.registerComponent('createDonut', {
+AFRAME.registerComponent('createdonut', {
     init: function () {
         console.log("EXPLOSION!");
 
@@ -17,7 +17,7 @@ AFRAME.registerComponent('createDonut', {
     }
 });
 
-// AFRAME.registerComponent('createDonut', {
+// AFRAME.registerComponent('createdonut', {
 //     init: function () {
 //         const el = this.el;
 //         const donut = new Donut(this.el)
