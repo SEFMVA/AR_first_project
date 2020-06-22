@@ -5,6 +5,8 @@ document.addEventListener("markerFound", () => {
 
 AFRAME.registerComponent('createDonut', {
     init: function () {
+        console.log("EXPLOSION!");
+
         console.log(this);
         console.log(this.el);
         console.log(this.el.sceneEl);
