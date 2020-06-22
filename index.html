@@ -1,38 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<!-- http://www.createwebxr.com/webAR.html -->
-<!-- https://github.com/AR-js-org/AR.js -->
-<!-- https://ar-js-org.github.io/AR.js-Docs/image-tracking/#create-image-descriptors -->
-<!-- https://github.com/nicolocarpignoli/artoolkit-barcode-markers-collection -->
-<!-- https://au.gmented.com/app/marker/marker.php -->
-<!-- https://aframe.io/docs/1.0.0/introduction/ -->
+<script
+    src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js">
+</script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR</title>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script> -->
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <!-- <script src="Donut.js"></script> -->
-    <script src="scripts.js"></script>
-    <!-- <script src="aframe-extras.js"></script> -->
-    <link rel="stylesheet" href="style.css">
-</head>
+<style>
+    .arjs-loader {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-<body style="overflow: hidden;">
+    .arjs-loader div {
+        text-align: center;
+        font-size: 1.25em;
+        color: white;
+    }
+</style>
+<script>
+    AFRAME.registerComponent('markerhandler', {
+        init: function () {
+            this.el.sceneEl.addEventListener('markerFound', () => {
+                // redirect to custom URL
+                window.location = 'https://github.com/AR-js-org/AR.js';
+            });
+        }
+    });
+</script>
 
+<body style="margin : 0px; overflow: hidden;">
+    <!-- minimal loader shown until image descriptors are loaded -->
+    <div class="arjs-loader">
+        <div>Loading, please wait...</div>
+    </div>
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
         arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
-
-        <a-nft type="nft" url="./markers/pinball/pinball" smooth="true" smoothCount="10" smoothTolerance=".01"
-            smoothThreshold="5" emitevents="true" createDonut>
-            <a-entity scale="0.1 0.1 0.1" gltf-model="./models/donut/Donut.gltf" animation-mixer="clip: Scene">
-            </a-entity>
+        <!-- we use cors proxy to avoid cross-origin problems -->
+        <!-- we use the trex image shown on the homepage of the docs -->
+        <a-nft markerhandler type="nft"
+            url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex">
         </a-nft>
-
         <a-entity camera></a-entity>
     </a-scene>
 </body>
-
-</html>
