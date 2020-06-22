@@ -1,5 +1,14 @@
+document.addEventListener("markerFound", () => {
+    console.log("Marker found!");
+
+})
+
 AFRAME.registerComponent('createDonut', {
     init: function () {
+        console.log(this);
+        console.log(this.el);
+        console.log(this.el.sceneEl);
+
         this.el.sceneEl.addEventListener('markerFound', () => {
             window.location = 'https://github.com/AR-js-org/AR.js';
         });
