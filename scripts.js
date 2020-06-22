@@ -1,20 +1,23 @@
-var DONUT = null
-var AUDIO = new Audio("eatSound.mp3")
-
 document.addEventListener("markerFound", () => {
     console.log("Marker found!");
-    if (DONUT === null) {
-        console.log("TODO create donut")
 
-        DONUT.addEventListener("click", () => {
-            console.log("TODO start animation")
-            AUDIO.play()
-        })
-
-    }
 })
 
-AUDIO.addEventListener("ended", () => {
-    console.log("TODO delete donut")
-    DONUT = null
-})
+// AFRAME.registerComponent('createDonut', {
+//     init: function () {
+//         const el = this.el;
+//         const donut = new Donut(this.el)
+
+
+//         el.addEventListener('click', function () {
+//             console.log("click event");
+//             donut.view.dispatchEvent(new CustomEvent('click'))
+
+//         });
+
+//         el.addEventListener('touchend', function () {
+//             console.log("touchEnd event");
+//             donut.view.dispatchEvent(new CustomEvent('touchend'))
+//         });
+//     }
+// })
