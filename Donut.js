@@ -1,27 +1,29 @@
 class Donut {
-    constructor(holder) {
-        this.audio = new Audio("eatSound.mp3")
-        this.view = document.createElement('a-entity')
-        this.holder = holder
-        let scale = {
+    constructor({
+        holder,
+        scale = {
             x: 0.1,
             y: 0.1,
             z: 0.1
         }
+    }) {
+        this.audio = new Audio("eatSound.mp3")
+        this.view = document.createElement('a-entity')
+        this.holder = holder
+
         const modelPath = "./models/donut/Donut.gltf"
         this.view.setAttribute('scale', scale);
         this.view.setAttribute('gltf-model', modelPath)
-        this.view.setAttribute('visible', true);
-
+        this.view.setAttribute('visible', false);
+        // this.view.setAttribute('animation-mixer', "clip: Scene")
 
         this.view.addEventListener("click", () => {
             console.log("TODO start animation")
-            // this.play()
+            this.play()
         })
 
         this.audio.addEventListener("ended", () => {
-            console.log("TODO remove donut");
-            // this.view.classList.add("hiddenDonut")
+            this.view.setAttribute('visible', false);
         })
 
         this.holder.appendChild(this.view)
@@ -30,7 +32,9 @@ class Donut {
         this.audio.pause()
         this.audio.currentTime = 0
         this.audio.play()
-        // this.view.setAttribute('visible', true);
 
+    }
+    show() {
+        this.view.setAttribute('visible', true);
     }
 }
