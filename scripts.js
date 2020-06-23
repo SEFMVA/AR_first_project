@@ -18,6 +18,8 @@ var DONUT = new Donut({
 })
 
 scene.addEventListener("onefingermove", (event) => {
+    console.log(event);
+
     if (DONUT.isHidden === false) {
         DONUT.rotate({
             x: event.detail.positionChange.x * 1,
@@ -27,7 +29,9 @@ scene.addEventListener("onefingermove", (event) => {
     }
 });
 
-scene.addEventListener("twofingerend", () => {
+scene.addEventListener("twofingerend", (event) => {
+    console.log(event);
+
     if (DONUT.isHidden === false) {
         DONUT.view.dispatchEvent(new CustomEvent('click'))
 

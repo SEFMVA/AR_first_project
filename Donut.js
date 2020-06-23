@@ -66,8 +66,7 @@ class Donut {
         x = 0,
         y = 0
     }) {
-        this.view.object3D.rotation.y += x;
-
-        this.view.object3D.rotation.x += y;
+        this.view.object3D.rotation.x += x;
+        this.view.object3D.rotation.y += y;
     }
 }
