@@ -24,6 +24,7 @@ class Donut {
         this.view.setAttribute('class', "clickable")
         this.view.setAttribute('position', `${position.x} ${position.y} ${position.z}`)
         this.view.setAttribute('emitevents', "true")
+        this.view.setAttribute('gesture-handler', "")
 
         // this.view.setAttribute('animation__mouseenter', "property: rotation; to: 0 360 0; loop: true; dur: 10000 startEvents: mouseenter;")
         // this.view.setAttribute('animation__mouseleave', "property: rotation; to: 360 0 0; loop: true; dur: 10000 startEvents: mouseleave;")

@@ -1,11 +1,3 @@
-document.addEventListener("markerFound", () => {
-    console.log("Marker found!");
-    if (DONUT.isHidden === true) {
-        console.log("show donut");
-        DONUT.show()
-    }
-})
-
 const scene = document.querySelector("a-scene")
 
 var DONUT = new Donut({
@@ -14,6 +6,14 @@ var DONUT = new Donut({
         x: 0.3,
         y: 0.3,
         z: 0.3
+    }
+})
+
+scene.addEventListener("markerFound", () => {
+    console.log("Marker found!");
+    if (DONUT.isHidden === true) {
+        console.log("show donut");
+        DONUT.show()
     }
 })
 
@@ -33,7 +33,7 @@ scene.addEventListener("twofingerend", (event) => {
     console.log(event);
 
     if (DONUT.isHidden === false) {
-        DONUT.view.dispatchEvent(new CustomEvent('click'))
+        DONUT.view.dispatchEvent(new CustomEvent('touchend'))
 
     }
 });
