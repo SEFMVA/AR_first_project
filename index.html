@@ -27,11 +27,12 @@
         </a-assets>
 
         <a-nft type="nft" url="https://sefmva.github.io/AR_first_project/markers/pinball/pinball" smooth="true"
-            smoothCount="10" smoothTolerance=".01" smoothThreshold="5" emitevents="true">
+            smoothCount="10" smoothTolerance=".01" smoothThreshold="5">
         </a-nft>
 
         <a-entity camera>
-            <a-entity raycaster="objects: .clickable" cursor></a-entity>
+            <a-entity raycaster="objects: .clickable" cursor="fuse: false; rayOrigin: mouse;" emitevents="true">
+            </a-entity>
         </a-entity>
     </a-scene>
 </body>
