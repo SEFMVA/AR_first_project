@@ -29,15 +29,19 @@ class Donut {
         // this.view.setAttribute('animation__mouseleave', "property: rotation; to: 360 0 0; loop: true; dur: 10000 startEvents: mouseleave;")
 
         this.view.addEventListener("click", () => {
-            console.log("click!");
-            this.view.setAttribute('animation', "property: object3D.position.y; to: 0.1; dir: alternate; dur: 200; loop: true")
-            this.play()
+            if (this.isHidden === false) {
+                console.log("click!");
+                this.view.setAttribute('animation', "property: object3D.position.y; to: 0.1; dir: alternate; dur: 200; loop: true")
+                this.play()
+            }
         })
 
         this.view.addEventListener("touchend", () => {
-            console.log("touchend!");
-            this.view.setAttribute('animation', "property: object3D.position.y; to: 0.1; dir: alternate; dur: 200; loop: true")
-            this.play()
+            if (this.isHidden === false) {
+                console.log("touchend!");
+                this.view.setAttribute('animation', "property: object3D.position.y; to: 0.1; dir: alternate; dur: 200; loop: true")
+                this.play()
+            }
         })
 
         this.audio.addEventListener("ended", () => {
