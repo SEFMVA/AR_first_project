@@ -62,4 +62,12 @@ class Donut {
         this.view.setAttribute('visible', true);
         this.isHidden = false
     }
+    rotate({
+        x = 0,
+        y = 0
+    }) {
+        this.view.object3D.rotation.y += x;
+
+        this.view.object3D.rotation.x += y;
+    }
 }

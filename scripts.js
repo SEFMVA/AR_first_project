@@ -6,8 +6,10 @@ document.addEventListener("markerFound", () => {
     }
 })
 
+const scene = document.querySelector("a-scene")
+
 var DONUT = new Donut({
-    holder: document.querySelector("a-scene"),
+    holder: scene,
     scale: {
         x: 0.3,
         y: 0.3,
@@ -15,23 +17,19 @@ var DONUT = new Donut({
     }
 })
 
-// AFRAME.registerComponent('createdonut', {
-//     init: function () {
-//         if (DONUT.isHidden === true) {
-//             // const el = this.el;
-//             console.log("show donut");
-//             DONUT.show()
+scene.addEventListener("onefingermove", (event) => {
+    if (DONUT.isHidden === false) {
+        DONUT.rotate({
+            x: event.detail.positionChange.x * 1,
+            y: event.detail.positionChange.y * 1
+        })
 
-//             // el.addEventListener('click', function () {
-//             //     console.log("click event");
-//             //     DONUT.view.dispatchEvent(new CustomEvent('click'))
+    }
+});
 
-//             // });
+scene.addEventListener("twofingerend", () => {
+    if (DONUT.isHidden === false) {
+        DONUT.view.dispatchEvent(new CustomEvent('click'))
 
-//             // el.addEventListener('touchend', function () {
-//             //     console.log("touchEnd event");
-//             //     DONUT.view.dispatchEvent(new CustomEvent('click'))
-//             // });
-//         }
-//     }
-// })
+    }
+});
