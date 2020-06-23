@@ -8,7 +8,7 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <script src="Donut.js"></script>
-    <script src="scripts.js"></script>
+    <script src="scripts.js" defer></script>
     <script src="aframe-extras.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -18,15 +18,21 @@
         <div>Loading, please wait...</div>
     </div>
     <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
-        arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+        arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
+
+
+        <a-assets>
+            <a-asset-item id="donut-asset" src="./models/donut/Donut.gltf">
+            </a-asset-item>
+        </a-assets>
 
         <a-nft type="nft" url="https://sefmva.github.io/AR_first_project/markers/pinball/pinball" smooth="true"
             smoothCount="10" smoothTolerance=".01" smoothThreshold="5" emitevents="true" createdonut>
-            <!-- <a-entity scale="0.1 0.1 0.1" gltf-model="./models/donut/Donut.gltf" animation-mixer="clip: Scene"> -->
-            </a-entity>
         </a-nft>
 
-        <a-entity camera></a-entity>
+        <a-entity camera>
+            <a-entity raycaster="objects: .clickable" cursor></a-entity>
+        </a-entity>
     </a-scene>
 </body>
 

@@ -1,37 +1,33 @@
 document.addEventListener("markerFound", () => {
     console.log("Marker found!");
+})
 
+var DONUT = new Donut({
+    holder: document.querySelector("a-scene"),
+    scale: {
+        x: 0.3,
+        y: 0.3,
+        z: 0.3
+    }
 })
 
 AFRAME.registerComponent('createdonut', {
     init: function () {
-        console.log("EXPLOSION!");
+        if (DONUT.isHidden === true) {
+            // const el = this.el;
+            console.log("show donut");
+            DONUT.show()
 
-        console.log(this);
-        console.log(this.el);
-        console.log(this.el.sceneEl);
+            // el.addEventListener('click', function () {
+            //     console.log("click event");
+            //     DONUT.view.dispatchEvent(new CustomEvent('click'))
 
-        this.el.sceneEl.addEventListener('markerFound', () => {
-            window.location = 'https://github.com/AR-js-org/AR.js';
-        });
+            // });
+
+            // el.addEventListener('touchend', function () {
+            //     console.log("touchEnd event");
+            //     DONUT.view.dispatchEvent(new CustomEvent('click'))
+            // });
+        }
     }
-});
-
-// AFRAME.registerComponent('createdonut', {
-//     init: function () {
-//         const el = this.el;
-//         const donut = new Donut(this.el)
-
-
-//         el.addEventListener('click', function () {
-//             console.log("click event");
-//             donut.view.dispatchEvent(new CustomEvent('click'))
-
-//         });
-
-//         el.addEventListener('touchend', function () {
-//             console.log("touchEnd event");
-//             donut.view.dispatchEvent(new CustomEvent('touchend'))
-//         });
-//     }
-// })
+})
