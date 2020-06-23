@@ -1,5 +1,9 @@
 document.addEventListener("markerFound", () => {
     console.log("Marker found!");
+    if (DONUT.isHidden === true) {
+        console.log("show donut");
+        DONUT.show()
+    }
 })
 
 var DONUT = new Donut({
@@ -11,23 +15,23 @@ var DONUT = new Donut({
     }
 })
 
-AFRAME.registerComponent('createdonut', {
-    init: function () {
-        if (DONUT.isHidden === true) {
-            // const el = this.el;
-            console.log("show donut");
-            DONUT.show()
+// AFRAME.registerComponent('createdonut', {
+//     init: function () {
+//         if (DONUT.isHidden === true) {
+//             // const el = this.el;
+//             console.log("show donut");
+//             DONUT.show()
 
-            // el.addEventListener('click', function () {
-            //     console.log("click event");
-            //     DONUT.view.dispatchEvent(new CustomEvent('click'))
+//             // el.addEventListener('click', function () {
+//             //     console.log("click event");
+//             //     DONUT.view.dispatchEvent(new CustomEvent('click'))
 
-            // });
+//             // });
 
-            // el.addEventListener('touchend', function () {
-            //     console.log("touchEnd event");
-            //     DONUT.view.dispatchEvent(new CustomEvent('click'))
-            // });
-        }
-    }
-})
+//             // el.addEventListener('touchend', function () {
+//             //     console.log("touchEnd event");
+//             //     DONUT.view.dispatchEvent(new CustomEvent('click'))
+//             // });
+//         }
+//     }
+// })
