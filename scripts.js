@@ -37,3 +37,12 @@ scene.addEventListener("twofingerend", (event) => {
 
     }
 });
+
+scene.addEventListener("threefingerend", (event) => {
+    console.log(event);
+
+    if (DONUT.isHidden === false) {
+        DONUT.view.dispatchEvent(new CustomEvent('makeBackflip'))
+
+    }
+});

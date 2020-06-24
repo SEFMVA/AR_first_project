@@ -45,6 +45,16 @@ class Donut {
             }
         })
 
+        this.view.addEventListener("makeBackflip", () => {
+            if (this.isHidden === false) {
+                console.log("backflip!");
+                this.view.setAttribute('animation-mixer', {
+                    clip: 'Scene',
+                    loop: 'once'
+                });
+            }
+        })
+
         this.audio.addEventListener("ended", () => {
             this.view.removeAttribute('animation')
             this.view.setAttribute('visible', false);
