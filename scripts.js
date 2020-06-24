@@ -33,7 +33,7 @@ scene.addEventListener("twofingerend", (event) => {
     console.log(event);
 
     if (DONUT.isHidden === false) {
-        DONUT.view.dispatchEvent(new CustomEvent('touchend'))
+        // DONUT.view.dispatchEvent(new CustomEvent('touchend'))
 
     }
 });
