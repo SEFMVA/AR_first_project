@@ -46,7 +46,7 @@ class Donut {
         })
 
         this.audio.addEventListener("ended", () => {
-            this.view.setAttribute('animation', "")
+            this.view.removeAttribute('animation')
             this.view.setAttribute('visible', false);
             this.isHidden = true
         })
