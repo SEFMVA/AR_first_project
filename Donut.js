@@ -44,6 +44,7 @@ class Donut {
                 console.log("touchend!");
                 this.view.setAttribute('animation', "property: object3D.position.y; to: 0.1; dir: alternate; dur: 200; loop: true")
                 this.play()
+                this.eatingLock = true
             }
         })
 

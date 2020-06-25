@@ -18,7 +18,7 @@ scene.addEventListener("markerFound", () => {
 })
 
 scene.addEventListener("onefingermove", (event) => {
-    console.log(event);
+    // console.log(event);
 
     if (DONUT.isHidden === false) {
         DONUT.rotate({
