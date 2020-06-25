@@ -32,7 +32,7 @@ scene.addEventListener("onefingermove", (event) => {
 scene.addEventListener("twofingerend", (event) => {
     console.log(event);
 
-    if (DONUT.isHidden === false) {
+    if (DONUT.isHidden === false && DONUT.eatingLock === false) {
         DONUT.view.dispatchEvent(new CustomEvent('touchend'))
 
     }

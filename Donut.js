@@ -26,6 +26,7 @@ class Donut {
         this.view.setAttribute('emitevents', "true")
         this.view.setAttribute('gesture-handler', "")
 
+        this.eatingLock = false
         // this.view.setAttribute('animation__mouseenter', "property: rotation; to: 0 360 0; loop: true; dur: 10000 startEvents: mouseenter;")
         // this.view.setAttribute('animation__mouseleave', "property: rotation; to: 360 0 0; loop: true; dur: 10000 startEvents: mouseleave;")
 
@@ -34,6 +35,7 @@ class Donut {
                 console.log("click!");
                 this.view.setAttribute('animation', "property: object3D.position.y; to: 0.1; dir: alternate; dur: 200; loop: true")
                 this.play()
+                this.eatingLock = true
             }
         })
 
@@ -49,6 +51,7 @@ class Donut {
             this.view.removeAttribute('animation')
             this.view.setAttribute('visible', false);
             this.isHidden = true
+            this.eatingLock = false
         })
 
         this.holder.appendChild(this.view)
