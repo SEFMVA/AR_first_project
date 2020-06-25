@@ -22,8 +22,8 @@ scene.addEventListener("onefingermove", (event) => {
 
     if (DONUT.isHidden === false) {
         DONUT.rotate({
-            x: event.detail.positionChange.x * 1,
-            y: event.detail.positionChange.y * 1
+            x: event.detail.positionChange.x * 2,
+            y: event.detail.positionChange.y * 2
         })
 
     }
@@ -33,16 +33,14 @@ scene.addEventListener("twofingerend", (event) => {
     console.log(event);
 
     if (DONUT.isHidden === false) {
-        // DONUT.view.dispatchEvent(new CustomEvent('touchend'))
+        DONUT.view.dispatchEvent(new CustomEvent('touchend'))
 
     }
 });
 
-scene.addEventListener("threefingerend", (event) => {
-    console.log(event);
-
-    if (DONUT.isHidden === false) {
-        DONUT.view.dispatchEvent(new CustomEvent('makeBackflip'))
-
-    }
-});
+// scene.addEventListener("threefingerend", (event) => {
+//     console.log(event);
+//     if (DONUT.isHidden === false) {
+//         DONUT.makeBackflip()
+//     }
+// });

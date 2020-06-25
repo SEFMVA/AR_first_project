@@ -45,16 +45,6 @@ class Donut {
             }
         })
 
-        this.view.addEventListener("makeBackflip", () => {
-            if (this.isHidden === false) {
-                console.log("backflip!");
-                this.view.setAttribute('animation-mixer', {
-                    clip: '*',
-                    loop: 'once'
-                });
-            }
-        })
-
         this.audio.addEventListener("ended", () => {
             this.view.removeAttribute('animation')
             this.view.setAttribute('visible', false);
@@ -72,12 +62,25 @@ class Donut {
     show() {
         this.view.setAttribute('visible', true);
         this.isHidden = false
+        this.makeBackflip()
+    }
+    makeBackflip() {
+        if (this.isHidden === false) {
+            console.log("backflip!");
+            this.view.setAttribute('animation-mixer', {
+                clip: '*',
+                loop: 'once'
+            });
+            setTimeout(() => {
+                this.view.removeAttribute('animation-mixer')
+            }, 2500);
+        }
     }
     rotate({
         x = 0,
         y = 0
     }) {
-        this.view.object3D.rotation.x += x;
-        this.view.object3D.rotation.y += y;
+        this.view.object3D.rotation.x += y;
+        this.view.object3D.rotation.y += x;
     }
 }
