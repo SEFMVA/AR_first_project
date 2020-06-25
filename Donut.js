@@ -75,9 +75,9 @@ class Donut {
                 clip: 'DonutFlip',
                 loop: 'once'
             });
-            setTimeout(() => {
-                this.view.removeAttribute('animation-mixer')
-            }, 2500);
+            // setTimeout(() => {
+            //     this.view.removeAttribute('animation-mixer')
+            // }, 2500);
         }
     }
     rotate({
