@@ -75,10 +75,15 @@ class Donut {
                 clip: 'DonutFlip',
                 loop: 'repeat'
             });
-            // setTimeout(() => {
-            //     this.view.removeAttribute('animation-mixer')
-            // }, 2500);
+            setTimeout(this.makeIdle(), 2500);
         }
+    }
+    makeIdle() {
+        this.view.removeAttribute('animation-mixer')
+        this.view.setAttribute('animation-mixer', {
+            clip: 'DonutFlip',
+            loop: 'repeat'
+        });
     }
     rotate({
         x = 0,
