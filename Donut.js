@@ -76,7 +76,7 @@ class Donut {
                 clip: 'DonutFlip',
                 loop: 'once'
             });
-            setTimeout(this.makeIdle, 3000);
+            setTimeout(this.makeIdle.bind(this), 3000);
         }
     }
     makeIdle() {
