@@ -3,9 +3,9 @@ const scene = document.querySelector("a-scene")
 var DONUT = new Donut({
     holder: scene,
     scale: {
-        x: 3,
-        y: 3,
-        z: 3
+        x: 2,
+        y: 2,
+        z: 2
     }
 })
 
