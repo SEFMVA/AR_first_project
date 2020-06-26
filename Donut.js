@@ -71,10 +71,10 @@ class Donut {
     makeBackflip() {
         if (this.isHidden === false) {
             console.log("backflip!");
-            // this.view.setAttribute('animation-mixer', {
-            //     clip: 'DonutFlip',
-            //     loop: 'once'
-            // });
+            this.view.setAttribute('animation-mixer', {
+                clip: 'DonutFlip',
+                loop: 'once'
+            });
             // setTimeout(() => {
             //     this.view.removeAttribute('animation-mixer')
             // }, 2500);
