@@ -66,7 +66,8 @@ class Donut {
     show() {
         this.view.setAttribute('visible', true);
         this.isHidden = false
-        this.makeBackflip()
+        // this.makeBackflip()
+        this.makeFall()
     }
     makeBackflip() {
         if (this.isHidden === false) {
@@ -87,6 +88,17 @@ class Donut {
             clip: 'DonutIdle',
             loop: 'repeat'
         });
+    }
+    makeFall(){
+        if (this.isHidden === false) {
+            console.log("DonutFall!");
+            this.view.removeAttribute('animation-mixer')
+            this.view.setAttribute('animation-mixer', {
+                clip: 'DonutFall',
+                loop: 'once'
+            });
+            // setTimeout(this.makeIdle.bind(this), 3000);
+        }
     }
     rotate({
         x = 0,
