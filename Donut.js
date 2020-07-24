@@ -110,4 +110,13 @@ class Donut {
         this.view.object3D.rotation.x += y;
         this.view.object3D.rotation.y += x;
     }
+    rotateAll({
+        x = 0,
+        y = 0,
+        z = 0
+    }){
+        this.view.object3D.rotation.x += x;
+        this.view.object3D.rotation.y += y;
+        this.view.object3D.rotation.z += z;
+    }
 }
