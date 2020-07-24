@@ -12,7 +12,7 @@ var DONUT = new Donut({
 
 scene.addEventListener("markerFound", () => {
     console.log("Marker found!");
-    console.log(nft.getAttribute('position'));
+    console.log(nft.getAttribute('rotation'));
     if (DONUT.isHidden === true) {
         console.log("show donut");
         DONUT.show()
