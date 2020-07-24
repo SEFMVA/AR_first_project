@@ -1,7 +1,7 @@
 const scene = document.querySelector("a-scene")
-
+const nft=document.querySelector("#nft-holder")
 var DONUT = new Donut({
-    holder: scene,
+    holder: nft,
     scale: {
         x: 1,
         y: 1,
