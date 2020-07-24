@@ -1,7 +1,8 @@
 const scene = document.querySelector("a-scene")
 const nft=document.querySelector("#nft-holder")
+
 var DONUT = new Donut({
-    holder: nft,
+    holder: scene,
     scale: {
         x: 1,
         y: 1,
@@ -11,19 +12,20 @@ var DONUT = new Donut({
 
 scene.addEventListener("markerFound", () => {
     console.log("Marker found!");
+    console.log(nft.getAttribute('position'));
     if (DONUT.isHidden === true) {
         console.log("show donut");
         DONUT.show()
     }
 })
 
-scene.addEventListener("markerLost", () => {
-    console.log("Marker lost!");
-    if (DONUT.isHidden === false) {
-        console.log("show donut");
-        DONUT.hide()
-    }
-})
+// scene.addEventListener("markerLost", () => {
+//     console.log("Marker lost!");
+//     if (DONUT.isHidden === false) {
+//         console.log("hide donut");
+//         DONUT.hide()
+//     }
+// })
 
 scene.addEventListener("onefingermove", (event) => {
     // console.log(event);
