@@ -70,6 +70,7 @@ class Donut {
     }
     hide(){
         this.view.setAttribute('visible', false);
+        this.resetRotation()
         this.isHidden = true
     }
     makeBackflip() {
@@ -118,5 +119,10 @@ class Donut {
         this.view.object3D.rotation.x += x;
         this.view.object3D.rotation.y += y;
         this.view.object3D.rotation.z += z;
+    }
+    resetRotation(){
+        this.view.object3D.rotation.x = 0;
+        this.view.object3D.rotation.y = 0;
+        this.view.object3D.rotation.z = 0;
     }
 }
