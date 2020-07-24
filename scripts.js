@@ -17,6 +17,14 @@ scene.addEventListener("markerFound", () => {
     }
 })
 
+scene.addEventListener("markerLost", () => {
+    console.log("Marker lost!");
+    if (DONUT.isHidden === false) {
+        console.log("show donut");
+        DONUT.hide()
+    }
+})
+
 scene.addEventListener("onefingermove", (event) => {
     // console.log(event);
 

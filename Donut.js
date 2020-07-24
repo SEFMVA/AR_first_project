@@ -50,8 +50,7 @@ class Donut {
 
         this.audio.addEventListener("ended", () => {
             this.view.removeAttribute('animation')
-            this.view.setAttribute('visible', false);
-            this.isHidden = true
+            this.hide()
             this.eatingLock = false
         })
 
@@ -68,6 +67,10 @@ class Donut {
         this.isHidden = false
         // this.makeBackflip()
         this.makeFall()
+    }
+    hide(){
+        this.view.setAttribute('visible', false);
+        this.isHidden = true
     }
     makeBackflip() {
         if (this.isHidden === false) {
